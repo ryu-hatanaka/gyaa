@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Mother : MonoBehaviour
 {
-    public List<GameObject> _henchman_list;
-    // Start is called before the first frame update
+    protected List<GameObject> _henchman_list;
+    protected float speed;
+
     public void addHenchmanList( GameObject obj ){
         _henchman_list.Add( obj );
     }

@@ -1,34 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : Mother {
     private Rigidbody rb;
-    private GameObject this_obj;
+    private GameObject _go;
 
-    public Player( GameObject this_obj ){
-        this.this_obj = this_obj;
-        rb = this_obj.GetComponent< Rigidbody >( );
+    public void setup( ) {
+        createMother( );
+        rb = _go.GetComponent< Rigidbody >( );
     }
-    public void update( ){
+    public void update( ) {
         move( );
     }
 
-    private void move( ){
-        const float SPEED = 5.0f;
-        Vector3 vec = new Vector3( 0, 0, 0 );
-        if ( Input.GetKey( KeyCode.W ) || Input.GetKey( KeyCode.UpArrow ) ){
-            vec += new Vector3( 0, 0, SPEED );
-        }
-        if ( Input.GetKey( KeyCode.S ) || Input.GetKey( KeyCode.DownArrow ) ){
-            vec += new Vector3( 0, 0, -SPEED );
-        }
-        if ( Input.GetKey( KeyCode.A ) || Input.GetKey( KeyCode.LeftArrow ) ){
-            vec += new Vector3( -SPEED, 0, 0 );
-        }
-        if ( Input.GetKey( KeyCode.D ) || Input.GetKey( KeyCode.RightArrow ) ){
-            vec += new Vector3( SPEED, 0, 0 );
-        }
+    //createという名前であるが子オブジェクトを参照しているだけである
+    private void createMother( ) {
+        _go = transform.Find( "Mother" ).gameObject;
+    }
+
+    private void move( ) {
+        float horizontal = Input.GetAxisRaw( "Horizontal" );
+        float vertical = Input.GetAxisRaw( "Vertical" );
+        float speed = COMMON.VAR.PLAYER_SPEED;
+        Vector3 vec = new Vector3( horizontal * speed, 0.0f, vertical * speed );
         rb.velocity = vec;
     }
 }

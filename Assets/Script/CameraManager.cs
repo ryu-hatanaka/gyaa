@@ -7,6 +7,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField]GameObject _camera_obj;
     [SerializeField]GameObject _player_obj;
     Vector3 _offset;
+
     // Start is called before the first frame update
     void Start( ) {
         _camera_obj.transform.position = new Vector3( 0, 10, -10 );
