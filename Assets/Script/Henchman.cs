@@ -10,7 +10,6 @@ public class Henchman : MonoBehaviour {
     public void setup( GameObject my_mother_go, int id ) {
         _my_mother_go = my_mother_go;
         _id = id;
-
         settingHomePosition( );
     }
     public void update( ) {
@@ -35,7 +34,6 @@ public class Henchman : MonoBehaviour {
 
         
         float radian = getColumn( ); //Žq•ª“¯Žm‚ÌŠÔŠu
-
         float new_sin = Mathf.Sin( radian );
         float new_cos = Mathf.Cos( radian );
         
@@ -51,7 +49,7 @@ public class Henchman : MonoBehaviour {
                 return column;
             }
             column++;
-            column_max_henchman_num *= 2;
+            column_max_henchman_num *= 3;
         }
 
         Debug.LogError( "Henchman Column Error" );
