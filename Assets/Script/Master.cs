@@ -15,7 +15,6 @@ public class Master : MonoBehaviour {
         if( _player_go != null ) {
             _player_go.GetComponent<Player>( ).update( );
             _henchman_manager.GetComponent<HenchmanManager>( ).update( );
-
         }
     }
 
