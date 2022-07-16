@@ -21,8 +21,8 @@ public class HenchmanManager : MonoBehaviour {
     }
 
     private void createHenchman( ) {
-        GameObject go = Instantiate( _henchman_prefab );
-        _henchman_list.Add( go );
-        go.GetComponent<Henchman>( ).setup( go, _henchman_list.Count );
+        GameObject henchman_go = Instantiate( _henchman_prefab );
+        _henchman_list.Add( henchman_go );
+        henchman_go.GetComponent<Henchman>( ).setup( henchman_go, _henchman_list.Count );
     }
 }
