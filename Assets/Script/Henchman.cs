@@ -7,8 +7,12 @@ using UnityEngine;
 public class Henchman : MonoBehaviour {
     private GameObject _my_mother_go; //親のオブジェクト
     private int _id; //Motherに登録されているListのidx
-
     private Vector3 _home_position;
+
+    public Henchman( GameObject my_mother_go) {
+        _my_mother_go = my_mother_go;
+    }
+
     public void setup( GameObject my_mother_go, int id ) {
         _my_mother_go = my_mother_go;
         _id = id;
@@ -16,14 +20,6 @@ public class Henchman : MonoBehaviour {
         settingHomePosition( );
     }
     public void update( ) {
-
-    }
-
-    public void moveCaseStop( ) {
-
-    }
-
-    private void moveCaseRun( ) {
 
     }
 

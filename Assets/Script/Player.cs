@@ -3,21 +3,16 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
 public class Player : Mother {
     private Rigidbody rb;
-    private GameObject _go;
-
     public void setup( ) {
-        createMother( );
-        rb = _go.GetComponent< Rigidbody >( );
+        rb = this.GetComponent< Rigidbody >( );
+        initCreateHenchman( );
     }
     public void update( ) {
+        Debug.Log( _henchman_list );
         move( );
-    }
-
-    //createという名前であるが子オブジェクトを参照しているだけである
-    private void createMother( ) {
-        _go = transform.Find( "Mother" ).gameObject;
     }
 
     private void move( ) {
@@ -26,5 +21,9 @@ public class Player : Mother {
         float speed = COMMON.VAR.PLAYER_SPEED;
         Vector3 vec = new Vector3( horizontal * speed, 0.0f, vertical * speed );
         rb.velocity = vec;
+    }
+
+    private void initCreateHenchman(){
+        addHenchman( );
     }
 }
