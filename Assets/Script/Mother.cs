@@ -7,6 +7,7 @@ public class Mother : MonoBehaviour{
     public void addHenchman( ){
         GameObject prefab = ( GameObject )Resources.Load( "Henchman" );
         GameObject go = Instantiate( prefab );
+        go.transform.position = this.transform.position + new Vector3( 0.0f, 0.0f, 0.0f ); //testÉRÅ[Éh
         _henchman_list.Add( go );
     }
 }

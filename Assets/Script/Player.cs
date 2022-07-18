@@ -18,14 +18,12 @@ public class Player : Mother {
     }
 
     private void move( ) {
-
         MoveToKey( );
     }
 
     private void MoveToKey( ) {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
+        float horizontal = Input.GetAxisRaw("Horizontal"); //A、D、←、→
+        float vertical = Input.GetAxisRaw("Vertical");　   //W、S、↑、↓
         float speed = COMMON.VAR.PLAYER_SPEED;
         Vector3 vec = new Vector3(horizontal * speed, 0.0f, vertical * speed);
         rb.velocity = vec;
