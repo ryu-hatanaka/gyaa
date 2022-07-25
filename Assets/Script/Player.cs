@@ -29,7 +29,7 @@ public class Player : Mother {
     }
 
     private void initCreateHenchman( ) {
-        addHenchman( );
+        createHenchman( );
     }
 }
 
